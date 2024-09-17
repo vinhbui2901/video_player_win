@@ -100,14 +100,6 @@ class WinVideoPlayerController extends ValueNotifier<WinVideoPlayerValue> {
   WinVideoPlayerController._(this.dataSource, this.dataSourceType,
       {bool isBridgeMode = false})
       : super(WinVideoPlayerValue()) {
-    if (dataSourceType == WinDataSourceType.contentUri) {
-      throw UnsupportedError(
-          "VideoPlayerController.contentUri() not supported in Windows");
-    }
-    if (dataSourceType == WinDataSourceType.asset) {
-      throw UnsupportedError(
-          "VideoPlayerController.asset() not implement yet.");
-    }
 
     _isBridgeMode = isBridgeMode;
     //VideoPlayerWinPlatform.instance.registerPlayer(_textureId, this);
