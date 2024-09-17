@@ -193,7 +193,6 @@ class WinVideoPlayerController extends ValueNotifier<WinVideoPlayerValue> {
         }
         break;
       case 7: // MEError
-        log("[video_player_win] playback event: error");
         value = value.copyWith(
             isInitialized: false,
             isPlaying: false,
@@ -210,7 +209,6 @@ class WinVideoPlayerController extends ValueNotifier<WinVideoPlayerValue> {
     WinVideoPlayerValue? pv = await VideoPlayerWinPlatform.instance
         .openVideo(this, textureId_, dataSource);
     if (pv == null) {
-      log("[video_player_win] controller intialize (open video) failed");
       value = value.copyWith(
           isInitialized: false, errorDescription: "open file failed");
       _eventStreamController.add(VideoEvent(
